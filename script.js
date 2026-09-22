@@ -207,6 +207,14 @@ const productos = [
     precio: 500,
     imagen: 'https://i.ibb.co/BKVZfkk9/CHULETAS.jpg',
     descripcion: 'Set de 6 chuletas para el cabello.'
+  },
+  {
+    id: 'p27',
+    nombre: 'Botella Sorbete',
+    categoria: 'Accesorios',
+    precio: 4500,
+    imagen: 'https://i.ibb.co/Kk9rcxT/BOTELLAS.jpg',
+    descripcion: 'Botella práctica con sorbete integrado.'
   }
 ];
 
