@@ -215,6 +215,22 @@ const productos = [
     precio: 4500,
     imagen: 'https://i.ibb.co/Kk9rcxT/BOTELLAS.jpg',
     descripcion: 'Botella práctica con sorbete integrado.'
+  },
+  {
+    id: 'p28',
+    nombre: 'Pollera Halloween',
+    categoria: 'Fiesta',
+    precio: 3500,
+    imagen: 'https://i.ibb.co/LdmYKvmB/POLLERA-HALLOWEEN.jpg',
+    descripcion: 'Pollera temática de Halloween ideal para disfraces, fiestas y eventos festivos.'
+  },
+  {
+    id: 'p29',
+    nombre: 'Pollera Halloween',
+    categoria: 'Fiesta',
+    precio: 3500,
+    imagen: 'https://i.ibb.co/4wKM6mDP/POLLERA-HALLOWEEN-2.jpg',
+    descripcion: 'Pollera temática de Halloween ideal para disfraces, fiestas y eventos festivos.'
   }
 ];
 
