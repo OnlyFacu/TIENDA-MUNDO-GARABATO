@@ -1,11 +1,345 @@
 // NÚMERO DE WHATSAPP
 const WHATSAPP_NUMBER = "5493886441487";
 
-// LISTA DE PRODUCTOS (Destacados y productos de Halloween al inicio)
+// LISTA DE PRODUCTOS (Nuevos productos al inicio con descripciones personalizadas)
 const PRODUCTS = [
-  // 1. LOS 4 PRODUCTOS DESTACADOS
+  // 1. NUEVOS INGRESOS RECIENTES
+  {
+    id: 'p1',
+    name: 'Chuletas para Niñas',
+    category: 'Accesorios',
+    price: 2000,
+    inStock: true,
+    badge: 'NUEVO',
+    image: 'https://i.ibb.co/sD5NL2F/CHULETAS-PARA-NI-AS-2000.jpg',
+    description: 'Set de chuletas coloridas y divertidas para el cabello, perfectas para peinados infantiles llenos de estilo.'
+  },
+  {
+    id: 'p2',
+    name: 'Alas de Mariposa con Vincha y Varita',
+    category: 'Fiesta',
+    price: 3000,
+    inStock: true,
+    badge: 'DESTACADO',
+    image: 'https://i.ibb.co/MxhjbH7p/ALAS-DE-MARIPOSA-CON-VINCHA-Y-VARITA-3000.jpg',
+    description: 'Hermoso disfraz de mariposa que incluye alas decoradas, vincha a juego y varita mágica para jugar.'
+  },
+  {
+    id: 'p3',
+    name: 'Alas de Mariposa con Vincha y Varita',
+    category: 'Fiesta',
+    price: 3000,
+    inStock: true,
+    badge: 'DESTACADO',
+    image: 'https://i.ibb.co/C3Yqdh8W/ALAS-DE-MARIPOSA-CON-VINCHA-Y-VARITA2-3000.jpg',
+    description: 'Conjunto completo de mariposa con detalles brillantes, vincha con antenitas y varita mágica.'
+  },
+  {
+    id: 'p4',
+    name: 'Palitos Dentales',
+    category: 'Accesorios',
+    price: 2500,
+    inStock: true,
+    badge: 'NUEVO',
+    image: 'https://i.ibb.co/8QGpwSZ/PALITOS-DENTALES-2500.jpg',
+    description: 'Set práctico de palitos dentales de excelente calidad para el cuidado e higiene diaria.'
+  },
+  {
+    id: 'p5',
+    name: 'Velas Aromatizantes',
+    category: 'Papelería',
+    price: 1500,
+    inStock: true,
+    badge: 'DISPONIBLE',
+    image: 'https://i.ibb.co/wrLGKSmD/VELAS-AROMATIZANTES2-1500.jpg',
+    description: 'Velas aromáticas ideales para crear ambientes cálidos y perfumados en el hogar.'
+  },
+  {
+    id: 'p6',
+    name: 'Velas Aromatizantes',
+    category: 'Papelería',
+    price: 1500,
+    inStock: true,
+    badge: 'DISPONIBLE',
+    image: 'https://i.ibb.co/F4W2WdYb/VELAS-1500.jpg',
+    description: 'Velas decorativas con agradable fragancia para iluminar y aromatizar tus espacios.'
+  },
+  {
+    id: 'p7',
+    name: 'Velas Aromatizantes',
+    category: 'Papelería',
+    price: 1500,
+    inStock: true,
+    badge: 'DISPONIBLE',
+    image: 'https://i.ibb.co/zV8DTLhV/VELAS-AROMATIZANTES3-1500.jpg',
+    description: 'Velas con aroma suave y duradero, perfectas para regalar o regalarte un momento de relax.'
+  },
+  {
+    id: 'p8',
+    name: 'Velas Aromatizantes',
+    category: 'Papelería',
+    price: 1500,
+    inStock: true,
+    badge: 'DISPONIBLE',
+    image: 'https://i.ibb.co/4nvL7zxy/VELA-AROMATIZANTE-1500.jpg',
+    description: 'Vela aromatizante individual para sumar un toque acogedor y perfumado a cualquier rincón.'
+  },
+  {
+    id: 'p9',
+    name: 'Set de Costura',
+    category: 'Accesorios',
+    price: 2500,
+    inStock: true,
+    badge: 'NUEVO',
+    image: 'https://i.ibb.co/6Rzj1VYk/SET-DE-COSTURA-2500.jpg',
+    description: 'Práctico kit de costura compacto que incluye hilos, agujas y accesorios esenciales para emergencias.'
+  },
+  {
+    id: 'p10',
+    name: 'Vincha Feliz Cumple',
+    category: 'Fiesta',
+    price: 1500,
+    inStock: true,
+    badge: 'CUMPLE',
+    image: 'https://i.ibb.co/qL71r1Jq/VINCHA-FELIZ-CUMPLEA-OS2-1500.jpg',
+    description: 'Divertida vincha decorativa con motivo de festejo para destacar al cumpleañero o cumpleañera.'
+  },
+  {
+    id: 'p11',
+    name: 'Ventilador de Mano',
+    category: 'Accesorios',
+    price: 6000,
+    inStock: true,
+    badge: 'DESTACADO',
+    image: 'https://i.ibb.co/LTS7zyb/VENTILADOR-DE-MANO-6000.jpg',
+    description: 'Práctico ventilador portátil de mano, recargable o a pilas, ideal para los días de calor.'
+  },
+  {
+    id: 'p12',
+    name: 'Vincha Feliz Cumple',
+    category: 'Fiesta',
+    price: 1500,
+    inStock: true,
+    badge: 'CUMPLE',
+    image: 'https://i.ibb.co/bgNzzb9w/VINCHA-FELIZ-CUMPLE-1500.jpg',
+    description: 'Vincha festiva de cumpleaños colorida para darle más alegría y onda a tus celebraciones.'
+  },
+  {
+    id: 'p13',
+    name: 'Velas Feliz Cumple',
+    category: 'Fiesta',
+    price: 1500,
+    inStock: true,
+    badge: 'CUMPLE',
+    image: 'https://i.ibb.co/TBrZ65MB/VELAS-FELIZ-CUMPLE-1500.jpg',
+    description: 'Velas decorativas especiales para torta de cumpleaños con diseño festivo.'
+  },
+  {
+    id: 'p14',
+    name: 'Velas Feliz Cumple',
+    category: 'Fiesta',
+    price: 1500,
+    inStock: true,
+    badge: 'CUMPLE',
+    image: 'https://i.ibb.co/JwNKYjYs/VELAS-FELIZ-CUMPLEA-OS-1500.jpg',
+    description: 'Set de velas de cumpleaños coloridas para decorar la torta y pedir los mejores deseos.'
+  },
+  {
+    id: 'p15',
+    name: 'Platos Feliz Cumple',
+    category: 'Fiesta',
+    price: 1500,
+    inStock: true,
+    badge: 'CUMPLE',
+    image: 'https://i.ibb.co/ksW03CXs/PLATOS-FELIZ-CUMPLEA-OS2-1500.jpg',
+    description: 'Platos descartables temáticos de feliz cumpleaños para una mesa alegre y fácil de limpiar.'
+  },
+  {
+    id: 'p16',
+    name: 'Platos Feliz Cumple',
+    category: 'Fiesta',
+    price: 1500,
+    inStock: true,
+    badge: 'CUMPLE',
+    image: 'https://i.ibb.co/WNVG4TCG/PLATILLO-PARA-CUMPLEA-OS-1500.jpg',
+    description: 'Platillos decorativos descartables para tortas y golosinas en fiestas de cumpleaños.'
+  },
+  {
+    id: 'p17',
+    name: 'Sangre Falsa',
+    category: 'Fiesta',
+    price: 2000,
+    inStock: true,
+    badge: 'HALLOWEEN',
+    image: 'https://i.ibb.co/RpPYbSyS/SANGRE-FALSA-2000.jpg',
+    description: 'Efecto de sangre falsa ideal para disfraces terroríficos, maquillaje artístico y Halloween.'
+  },
+  {
+    id: 'p18',
+    name: 'Platos Feliz Cumple',
+    category: 'Fiesta',
+    price: 1500,
+    inStock: true,
+    badge: 'CUMPLE',
+    image: 'https://i.ibb.co/3Y7XFSqT/PLATO-FELIZ-CUMPLEA-OS3-1500.jpg',
+    description: 'Platos descartables con diseño festivo de cumpleaños para completar la decoración de tu evento.'
+  },
+  {
+    id: 'p19',
+    name: 'Tela de Araña',
+    category: 'Fiesta',
+    price: 1000,
+    inStock: true,
+    badge: 'HALLOWEEN',
+    image: 'https://i.ibb.co/gM6BsVLt/TELARA-A-1000.jpg',
+    description: 'Tela de araña decorativa elástica para ambientar fiestas temáticas y decoraciones de Halloween.'
+  },
+  {
+    id: 'p20',
+    name: 'Chuletas',
+    category: 'Accesorios',
+    price: 1500,
+    inStock: true,
+    badge: 'NUEVO',
+    image: 'https://i.ibb.co/q2X9MsD/CHULETAS-1500.jpg',
+    description: 'Pinches o chuletas para el cabello con diseños modernos y excelente sujeción.'
+  },
+  {
+    id: 'p21',
+    name: 'Set de Trabitas para Niñas',
+    category: 'Accesorios',
+    price: 1500,
+    inStock: true,
+    badge: 'NUEVO',
+    image: 'https://i.ibb.co/GQ1NQZZR/SET-DE-TRABITAS-PARA-NI-AS2-1500.jpg',
+    description: 'Set variado de trabitas infantiles para el cabello con adorables formas y colores.'
+  },
+  {
+    id: 'p22',
+    name: 'Chuletas',
+    category: 'Accesorios',
+    price: 1500,
+    inStock: true,
+    badge: 'NUEVO',
+    image: 'https://i.ibb.co/BKc4RT2X/CHULETAS2-1500.jpg',
+    description: 'Chuletas para el pelo súper prácticas y cancheras para armar peinados rápidos.'
+  },
+
+  // 2. INGRESOS ANTERIORES
+  {
+    id: 'p23',
+    name: 'Chuletas para Niñas',
+    category: 'Accesorios',
+    price: 2000,
+    inStock: true,
+    badge: 'NUEVO',
+    image: 'https://i.ibb.co/BV40dFc5/CHULETAS-PARA-NI-AS2-2000.jpg',
+    description: 'Hermoso set de chuletas para el cabello, ideales para peinados coloridos y divertidos en niñas.'
+  },
+  {
+    id: 'p24',
+    name: 'Set de Chuletas y Anteojos para Niñas',
+    category: 'Accesorios',
+    price: 3000,
+    inStock: true,
+    badge: 'SET',
+    image: 'https://i.ibb.co/xyKM04r/SET-DE-CHULETAS-Y-ANTEOJOS-PARA-NI-AS3-3000.jpg',
+    description: 'Combina diversión y estilo con este set que incluye chuletas para el pelo y anteojos de sol super coquetos.'
+  },
+  {
+    id: 'p25',
+    name: 'Set de Chuletas y Anteojos para Niñas',
+    category: 'Accesorios',
+    price: 3000,
+    inStock: true,
+    badge: 'SET',
+    image: 'https://i.ibb.co/k2qv6chy/SET-DE-CHULETA-Y-ANTEOJOS-PARA-NI-AS-3000.jpg',
+    description: 'Kit de accesorios de moda para niñas con anteojos y chuletas para el cabello a juego.'
+  },
+  {
+    id: 'p26',
+    name: 'Set de Chuletas y Anteojos para Niñas',
+    category: 'Accesorios',
+    price: 3000,
+    inStock: true,
+    badge: 'SET',
+    image: 'https://i.ibb.co/FtV09dC/SET-DE-CHULETAS-Y-ANTEOJOS-PARA-NI-AS4-3000.jpg',
+    description: 'Completo conjunto de moda infantil con anteojos y chuletas para lucir un look único.'
+  },
+  {
+    id: 'p27',
+    name: 'Set de Chuletas y Anteojos para Niñas',
+    category: 'Accesorios',
+    price: 3000,
+    inStock: true,
+    badge: 'SET',
+    image: 'https://i.ibb.co/g2T61jp/SET-DE-CHULETA-Y-ANTEOJOS-PARA-NI-AS2-3000.jpg',
+    description: 'Set coordinado de accesorios para el cabello con anteojos para niñas, excelente para regalar.'
+  },
+  {
+    id: 'p28',
+    name: 'Set de Trabitas para Niñas',
+    category: 'Accesorios',
+    price: 1500,
+    inStock: true,
+    badge: 'NUEVO',
+    image: 'https://i.ibb.co/zVttTzGm/SET-DE-TRABITAS-PARA-NI-AS-1500.jpg',
+    description: 'Set de trabitas y broches infantiles para sujetar el cabello con variados diseños encantadores.'
+  },
+  {
+    id: 'p29',
+    name: 'Vela Hornito',
+    category: 'Papelería',
+    price: 7000,
+    inStock: true,
+    badge: 'NUEVO',
+    image: 'https://i.ibb.co/RTSmZGT9/VELA-HORNITO-7000.jpg',
+    description: 'Vela aromatizante para hornito de fragancias. Ideal para dar un toque cálido y perfumado al hogar.'
+  },
   {
     id: 'p30',
+    name: 'Bolsita para Regalo',
+    category: 'Papelería',
+    price: 1500,
+    inStock: true,
+    badge: 'DISPONIBLE',
+    image: 'https://i.ibb.co/4RhJpz28/BOLSITA-PARA-REGALO-1500.jpg',
+    description: 'Bolsita de regalo decorada, ideal para presentar tus obsequios de forma delicada y especial.'
+  },
+  {
+    id: 'p31',
+    name: 'Aromatizante',
+    category: 'Papelería',
+    price: 3500,
+    inStock: true,
+    badge: 'DISPONIBLE',
+    image: 'https://i.ibb.co/0y7XFhkS/AROMATIZANTE2-3500.jpg',
+    description: 'Aromatizante ambiental con fragancia duradera para mantener tus espacios frescos y agradables.'
+  },
+  {
+    id: 'p32',
+    name: 'Aromatizante',
+    category: 'Papelería',
+    price: 3500,
+    inStock: true,
+    badge: 'DISPONIBLE',
+    image: 'https://i.ibb.co/B2kZMwHV/AROMATIZANTE-3500.jpg',
+    description: 'Difusor de aroma para ambientes con excelente fijación de fragancia.'
+  },
+  {
+    id: 'p33',
+    name: 'Corona para Niña',
+    category: 'Fiesta',
+    price: 1500,
+    inStock: true,
+    badge: 'DISPONIBLE',
+    image: 'https://i.ibb.co/0VMtm9qL/CORO-A-PARA-NI-A-1500.jpg',
+    description: 'Hermosa corona o tiara de princesa para niñas, ideal para festejos de cumpleaños, disfraces y juegos.'
+  },
+
+  // 3. RESTO DEL CATÁLOGO ORIGINAL
+  {
+    id: 'p34',
     name: 'Máscara de Anonymous',
     category: 'Fiesta',
     price: 1500,
@@ -15,7 +349,7 @@ const PRODUCTS = [
     description: 'Máscara clásica de Guy Fawkes (Anonymous). Liviana, con elástico cómodo, ideal para fiestas temáticas, disfraces y Halloween.'
   },
   {
-    id: 'p31',
+    id: 'p35',
     name: 'Máscara de Ghost Face',
     category: 'Fiesta',
     price: 1500,
@@ -25,7 +359,7 @@ const PRODUCTS = [
     description: 'Icónica máscara de terror Ghost Face (Scream) con capucha negra incorporada. Perfecta para dar sustos y destacar en fiestas de disfraces.'
   },
   {
-    id: 'p32',
+    id: 'p36',
     name: 'Gorro de Bruja',
     category: 'Fiesta',
     price: 2500,
@@ -35,7 +369,7 @@ const PRODUCTS = [
     description: 'Gorro puntiagudo de bruja clásico para disfraz. Excelente accesorio para completar tu outfit festivo de Noche de Brujas.'
   },
   {
-    id: 'p33',
+    id: 'p37',
     name: 'Gorro de Bruja',
     category: 'Fiesta',
     price: 2500,
@@ -44,10 +378,8 @@ const PRODUCTS = [
     image: 'https://i.ibb.co/7tvWL12h/GORRO-DE-BRUJA-2.jpg',
     description: 'Gorro de bruja con diseño especial, ideal para caracterizaciones, eventos escolares, fiestas de disfraces y Halloween.'
   },
-
-  // 2. LAS 2 POLLERAS HALLOWEEN (A CONTINUACIÓN DE LOS DESTACADOS)
   {
-    id: 'p28',
+    id: 'p38',
     name: 'Pollera Halloween',
     category: 'Fiesta',
     price: 3500,
@@ -57,7 +389,7 @@ const PRODUCTS = [
     description: 'Pollera temática de Halloween ideal para disfraces, fiestas y eventos festivos.'
   },
   {
-    id: 'p29',
+    id: 'p39',
     name: 'Pollera Halloween',
     category: 'Fiesta',
     price: 3500,
@@ -66,10 +398,8 @@ const PRODUCTS = [
     image: 'https://i.ibb.co/4wKM6mDP/POLLERA-HALLOWEEN-2.jpg',
     description: 'Pollera temática de Halloween ideal para disfraces, fiestas y eventos festivos.'
   },
-
-  // RESTO DEL CATÁLOGO
   {
-    id: 'p1',
+    id: 'p40',
     name: 'Cuaderno Inteligente',
     category: 'Cuadernos',
     price: 4500,
@@ -79,7 +409,7 @@ const PRODUCTS = [
     description: 'Cuaderno inteligente con sistema de hojas removibles.'
   },
   {
-    id: 'p2',
+    id: 'p41',
     name: 'Cuaderno Inteligente',
     category: 'Cuadernos',
     price: 4500,
@@ -89,7 +419,7 @@ const PRODUCTS = [
     description: 'Cuaderno inteligente con sistema de hojas removibles.'
   },
   {
-    id: 'p3',
+    id: 'p42',
     name: 'Cuaderno Inteligente',
     category: 'Cuadernos',
     price: 4500,
@@ -99,7 +429,7 @@ const PRODUCTS = [
     description: 'Cuaderno inteligente con sistema de hojas removibles.'
   },
   {
-    id: 'p4',
+    id: 'p43',
     name: 'Cuaderno Eco A5',
     category: 'Cuadernos',
     price: 2000,
@@ -109,7 +439,7 @@ const PRODUCTS = [
     description: 'Cuaderno ecológico tamaño A5.'
   },
   {
-    id: 'p5',
+    id: 'p44',
     name: 'Libreta Anillada A6',
     category: 'Libretas',
     price: 2000,
@@ -119,7 +449,7 @@ const PRODUCTS = [
     description: 'Libreta anillada práctica tamaño A6.'
   },
   {
-    id: 'p6',
+    id: 'p45',
     name: 'Anotador con Borde con Forma',
     category: 'Anotadores',
     price: 2000,
@@ -129,7 +459,7 @@ const PRODUCTS = [
     description: 'Anotador infantil con borde troquelado con forma.'
   },
   {
-    id: 'p7',
+    id: 'p46',
     name: 'Libreta con Lapicera',
     category: 'Libretas',
     price: 1500,
@@ -139,7 +469,7 @@ const PRODUCTS = [
     description: 'Set de libreta que incluye lapicera a juego.'
   },
   {
-    id: 'p8',
+    id: 'p47',
     name: 'Banderín Feliz Cumpleaños',
     category: 'Fiesta',
     price: 1500,
@@ -149,7 +479,7 @@ const PRODUCTS = [
     description: 'Banderín decorativo para festejos de cumpleaños.'
   },
   {
-    id: 'p9',
+    id: 'p48',
     name: 'Anotador con Elástico',
     category: 'Anotadores',
     price: 2500,
@@ -159,7 +489,7 @@ const PRODUCTS = [
     description: 'Anotador con cierre elástico.'
   },
   {
-    id: 'p10',
+    id: 'p49',
     name: 'Cuaderno Eco A5',
     category: 'Cuadernos',
     price: 2000,
@@ -169,7 +499,7 @@ const PRODUCTS = [
     description: 'Cuaderno ecológico tamaño A5.'
   },
   {
-    id: 'p11',
+    id: 'p50',
     name: 'Cuaderno Eco A5',
     category: 'Cuadernos',
     price: 2000,
@@ -179,7 +509,7 @@ const PRODUCTS = [
     description: 'Cuaderno ecológico tamaño A5.'
   },
   {
-    id: 'p12',
+    id: 'p51',
     name: 'Cuaderno Eco A5',
     category: 'Cuadernos',
     price: 2000,
@@ -189,7 +519,7 @@ const PRODUCTS = [
     description: 'Cuaderno ecológico tamaño A5.'
   },
   {
-    id: 'p13',
+    id: 'p52',
     name: 'Anotador con Borde',
     category: 'Anotadores',
     price: 2000,
@@ -199,7 +529,7 @@ const PRODUCTS = [
     description: 'Anotador con diseño especial en los bordes.'
   },
   {
-    id: 'p14',
+    id: 'p53',
     name: 'Anotador con Borde',
     category: 'Anotadores',
     price: 2000,
@@ -209,7 +539,7 @@ const PRODUCTS = [
     description: 'Anotador con diseño especial en los bordes.'
   },
   {
-    id: 'p15',
+    id: 'p54',
     name: 'Post It',
     category: 'Papelería',
     price: 1500,
@@ -219,7 +549,7 @@ const PRODUCTS = [
     description: 'Notas adhesivas tipo Post It.'
   },
   {
-    id: 'p16',
+    id: 'p55',
     name: 'Banderín Feliz Cumpleaños',
     category: 'Fiesta',
     price: 1500,
@@ -229,7 +559,7 @@ const PRODUCTS = [
     description: 'Banderín decorativo para festejos de cumpleaños.'
   },
   {
-    id: 'p17',
+    id: 'p56',
     name: 'Banderín Feliz Cumpleaños',
     category: 'Fiesta',
     price: 1500,
@@ -239,7 +569,7 @@ const PRODUCTS = [
     description: 'Banderín decorativo para festejos de cumpleaños.'
   },
   {
-    id: 'p18',
+    id: 'p57',
     name: 'Libreta de Osito con Lapicera',
     category: 'Libretas',
     price: 1500,
@@ -249,7 +579,7 @@ const PRODUCTS = [
     description: 'Libreta diseño Osito incluye lapicera.'
   },
   {
-    id: 'p19',
+    id: 'p58',
     name: 'Chuletas x6',
     category: 'Accesorios',
     price: 500,
@@ -259,7 +589,7 @@ const PRODUCTS = [
     description: 'Set de 6 chuletas para el cabello.'
   },
   {
-    id: 'p20',
+    id: 'p59',
     name: 'Set Fashion x5',
     category: 'Accesorios',
     price: 2500,
@@ -269,7 +599,7 @@ const PRODUCTS = [
     description: 'Set de moda fashion por 5 piezas.'
   },
   {
-    id: 'p21',
+    id: 'p60',
     name: 'Cajita Organizadora',
     category: 'Papelería',
     price: 2000,
@@ -279,7 +609,7 @@ const PRODUCTS = [
     description: 'Cajita organizadora para tus accesorios y elementos.'
   },
   {
-    id: 'p22',
+    id: 'p61',
     name: 'Set de Accesorios para Niña',
     category: 'Accesorios',
     price: 2000,
@@ -289,7 +619,7 @@ const PRODUCTS = [
     description: 'Set de hermosos accesorios para niña.'
   },
   {
-    id: 'p23',
+    id: 'p62',
     name: 'Set de Accesorios para Niña',
     category: 'Accesorios',
     price: 2000,
@@ -299,7 +629,7 @@ const PRODUCTS = [
     description: 'Set de hermosos accesorios para niña.'
   },
   {
-    id: 'p24',
+    id: 'p63',
     name: 'Set de Accesorios para Niña',
     category: 'Accesorios',
     price: 2000,
@@ -309,7 +639,7 @@ const PRODUCTS = [
     description: 'Set de hermosos accesorios para niña.'
   },
   {
-    id: 'p25',
+    id: 'p64',
     name: 'Kit de Manualidades Bijouterie',
     category: 'Manualidades',
     price: 5000,
@@ -319,7 +649,7 @@ const PRODUCTS = [
     description: 'Completo kit de manualidades para crear tu propia bijouterie.'
   },
   {
-    id: 'p26',
+    id: 'p65',
     name: 'Set de Chuletas x6',
     category: 'Accesorios',
     price: 500,
@@ -329,7 +659,7 @@ const PRODUCTS = [
     description: 'Set de 6 chuletas para el cabello.'
   },
   {
-    id: 'p27',
+    id: 'p66',
     name: 'Botella Sorbete',
     category: 'Accesorios',
     price: 4500,
