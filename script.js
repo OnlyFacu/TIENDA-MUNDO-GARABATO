@@ -90,7 +90,7 @@ const PRODUCTS = [
     category: 'Accesorios',
     price: 2500,
     inStock: true,
-    badge: 'NUEVO',
+    badge: 'Agotado',
     image: 'https://i.ibb.co/6Rzj1VYk/SET-DE-COSTURA-2500.jpg',
     description: 'Práctico kit de costura compacto que incluye hilos, agujas y accesorios esenciales para emergencias.'
   },
